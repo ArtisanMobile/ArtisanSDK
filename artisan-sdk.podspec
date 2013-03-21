@@ -9,7 +9,7 @@ Artisan is the first Mobile Experience Management platform that makes it easy to
   s.source       = { :git => "https://github.com/appRenaissance/artisan-sdk.git", :commit => '4cfd990750' }
   s.platform     = :ios, '5.0'
   s.resources    = 'ArtisanSDK.bundle', 'ArtisanAnalytics.bundle'
-  s.frameworks   = 'ArtisanSDK', 'CoreData', 'CFNetwork', 'Security', 'QuartzCore', 'SystemConfiguration', 'ArtisanSDK'
+  s.frameworks   = 'ArtisanSDK', 'CoreData', 'CFNetwork', 'Security', 'QuartzCore', 'SystemConfiguration'
   s.library      = 'z'
   s.requires_arc = true
   s.documentation = { :html => 'http://useartisan.com/' }
