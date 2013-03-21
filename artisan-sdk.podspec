@@ -13,6 +13,6 @@ Artisan is the first Mobile Experience Management platform that makes it easy to
   s.frameworks   = 'ArtisanSDK', 'CoreData', 'CFNetwork', 'Security', 'QuartzCore', 'SystemConfiguration', 'ArtisanSDK'
   s.library      = 'z'
   s.requires_arc = true
-  s.documentation = 'README.md'
+  s.documentation = {}
   s.xcconfig     = { 'HEADER_SEARCH_PATHS' => '"$(POD_ROOTS)"', 'FRAMEWORK_SEARCH_PATHS' => '"$(POD_ROOTS)/artisan-sdk"', 'OTHER_LDFLAGS' => '-ObjC, -lz'}
 end
