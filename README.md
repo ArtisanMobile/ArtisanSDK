@@ -1,11 +1,11 @@
-Installing the ArtisanSDK via CocoaPods
+Installing the [ArtisanSDK](useartisan.com) via [CocoaPods](cocoapods.org)
 =================
 
-If your project is already using CocoaPods{cocoapods.org} for managing your library dependencies you may wish to install the Artisan SDK in the same way. If you do not currently use CocoaPods, but would like to, this is an alternative method to install, manage, and update Artisan in your project.
+If your project is already using [CocoaPods](cocoapods.org) for managing your library dependencies you may wish to install the Artisan SDK in the same way. If you do not currently use CocoaPods, but would like to, this is an alternative method to install, manage, and update Artisan in your project.
 
 Installing CocoaPods
 =========
-Installing CocoaPods{cocoapods.org} is easy!
+Installing CocoaPods is easy!
 
 From the terminal:
 ```
@@ -15,7 +15,7 @@ $ pod setup
 
 Creating/Editing a Podfile
 ============
-In order to manage your library dependecies with CocoaPods{cocoapods.org} you need to create a podfile{http://docs.cocoapods.org/podfile.html}.
+In order to manage your library dependecies with CocoaPods you need to [create a podfile](http://docs.cocoapods.org/podfile.html).
 
 Create a file called `podfile` in the root directory of your project with the following:
 
@@ -36,7 +36,9 @@ Installing your dependencies is as easy as executing `pod install` from the loca
 
 Important
 =============
-When you install your dependencies, CocoaPods will create an _*.xcworkspace*_ for your project. You will need to open this instead of your .xcodeproj file whenever you want to work with your project from this point forward. The workspace keeps your code separate from the dependencies managed by CocoaPods while keeping track of the required build settings for each sub-project and implementing them on a per-project basis.
+When you install your dependencies, CocoaPods will create an _**.xcworkspace**_ for your project. You will need to open this instead of your .xcodeproj file whenever you want to work with your project from this point forward. 
+
+The workspace keeps your code separate from the dependencies managed by CocoaPods while keeping track of the required build settings for each sub-project and implementing them on a per-project basis.
 
 
 
