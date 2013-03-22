@@ -41,4 +41,17 @@ When you install your dependencies, CocoaPods will create an _**.xcworkspace**_ 
 The workspace keeps your code separate from the dependencies managed by CocoaPods while keeping track of the required build settings for each sub-project and implementing them on a per-project basis.
 
 
+Enabling Artisan in Your Project
+=============
+To enable Artisan at this point requires the addition of two lines to your AppDelegate file.
 
+At the top of the file with your other import statements, add:
+``` objective-c
+import <ArtisanSDK/ArtisanSDK.h>
+```
+
+Inside your application:didFinishLaunchingWithOptions: method, add the following line before all `return YES;` lines.
+``` objective-c
+[ARManager startWithAppId:@"##########################" version:@"1.0" options:nil];
+```
+where ################### is the application ID of your app. This can be found by logging in to artisantools.com, selecting your app and looking at the URL. It should look like `https://artisantools.com/apps/##########################`. What takes the place of the #'s is your applications ID.
