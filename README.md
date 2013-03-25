@@ -1,0 +1,1 @@
+Installation instructions: [ArtisanSpecs](https://github.com/appRenaissance/ArtisanSpecs)
