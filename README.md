@@ -28,7 +28,7 @@ pod 'artisan-sdk', :git => "https://github.com/appRenaissance/artisan-sdk.git"
 If you are already using CocoaPods, you can just add the pod line to your existing pod file and update the minimum iOS platform version.
 
 The above line will use the latest version of Artisan. Should you choose to lock yourself at a version you can modify that line:
-`pod 'artisan-sdk', :git => "https://github.com/appRenaissance/artisan-sdk.git", '~>1.0.3'`
+`pod 'artisan-sdk', '1.0.3', :git => "https://github.com/appRenaissance/artisan-sdk.git"`
 
 Install Dependencies
 ============
