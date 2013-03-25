@@ -47,7 +47,7 @@ To enable Artisan at this point requires the addition of two lines to your AppDe
 
 At the top of the file with your other import statements, add:
 ``` objective-c
-import <ArtisanSDK/ArtisanSDK.h>
+#import <ArtisanSDK/ArtisanSDK.h>
 ```
 
 Inside your application:didFinishLaunchingWithOptions: method, add the following line before all `return YES;` lines.
