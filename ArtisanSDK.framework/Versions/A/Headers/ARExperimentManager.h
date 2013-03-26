@@ -123,20 +123,6 @@
 
 + (void)setTargetReachedForExperiment:(NSString *)experimentName description:(NSString *)description;
 
-/** Indicate that the experiment has been viewed.
- *
- * Use this method to specify that your experiment has been viewed by the user. The conversion rate for this experiment is determined by the ratio of target reached events (triggered by setTargetReachedForExperiment: and setTargetReachedForExperiment:description:) to experiment viewed events (triggered by this method). 
- *
- * For example, if in the process of using this app, this method is called five times for an experiment and setTargetReachedForExperiment: is called twice, the conversion rate would be 40%.
- *
- * It is essential to call this method at least once for each experiment that you build to ensure that you will get an accurate conversion rate.
- *
- * @warning Placement of this event is critical to creating useful and accurate analytics. Make sure this code fires ONLY when you deem that the user has encountered your experiment. Consider cases where this method is fired, then the target for this experiment is reached, which transitions back to the same code that originally triggered this method. The conversion rate would now be 50%, rather than 100%, since this method was called twice.
- *
- * @param experimentName Name of the experiment that has been viewed. Must be a valid experiment.
- */
-
-+ (void)setExperimentViewedForExperiment:(NSString *)experimentName;
 
 /** Start an in-code Artisan experiment manually.
 *

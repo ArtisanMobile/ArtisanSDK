@@ -6,11 +6,6 @@
 
 #import <Foundation/Foundation.h>
 
-/*
- * This string constant can be used to set an boolean value @YES or @NO in the options dictionary which is an optional argument to startWithAppId:version:options:. Setting this to @NO will allow no one to perform the gesture on a device. The gesture recognizer is not added. @YES is the default.
- */
-extern NSString *const ARManagerShouldAllowArtisanGesture;
-
 /**
 * Initializes Artisan and manages its lifecycle.
 *
