@@ -7,9 +7,7 @@
 #import <Foundation/Foundation.h>
 
 #import <ArtisanSDK/ARManager.h>
-#import <ArtisanSDK/ARTrackingManager.h>
 #import <ArtisanSDK/ARExperimentManager.h>
-#import <ArtisanSDK/ARConfigManager.h>
 
 
 //////////////////////////////////////////////////////////////////////////////////

@@ -125,9 +125,7 @@
 
 /** Indicate that the experiment has been viewed.
  *
- * Use this method to specify that your experiment has been viewed by the user. The conversion rate for this experiment is determined by the ratio of target reached events (triggered by setTargetReachedForExperiment: and setTargetReachedForExperiment:description:) to experiment viewed events (triggered by this method). 
- *
- * For example, if in the process of using this app, this method is called five times for an experiment and setTargetReachedForExperiment: is called twice, the conversion rate would be 40%.
+ * Use this method to specify that your experiment has been viewed by the user. When this code is triggered, an experiment 'view' officially begins.  This experiment view counts as a 'conversion' if setTargetReachedForExperiment: is called for this experiment before (a) setExperimentViewedForExperiment: gets called again for this experiment or (b) the app is backgrounded.
  *
  * It is essential to call this method at least once for each experiment that you build to ensure that you will get an accurate conversion rate.
  *
