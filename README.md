@@ -1,1 +1,1 @@
-Installation instructions: [ArtisanSpecs](https://github.com/appRenaissance/ArtisanSpecs)
+Installation instructions: [ArtisanSpecs](https://github.com/ArtisanMobile/ArtisanSpecs)
