@@ -113,7 +113,7 @@ typedef enum { ARGenderMale, ARGenderFemale, ARGenderNA } ARGender;
 
 /** Clear out all previously specified profile information.
  *
- * Use this method to clear out any and all data previously specified for the current user, including any data set via setUserId:, setUserAge:, setUserAddress:, setGender:, setUserAddress:, and setValue:forVariable:.
+ * Use this method to clear out all data previously specified for the current user, including any data set via setUserId:, setUserAge:, setUserAddress:, setGender:, setUserAddress:, and setValue:forVariable:.
  *
  */
 
