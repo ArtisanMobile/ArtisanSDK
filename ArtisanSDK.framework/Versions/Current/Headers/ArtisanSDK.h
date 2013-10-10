@@ -9,6 +9,7 @@
 #import <ArtisanSDK/ARManager.h>
 #import <ArtisanSDK/ARExperimentManager.h>
 #import <ArtisanSDK/ARProfileManager.h>
+#import <ArtisanSDK/ARTrackingManager.h>
 
 //////////////////////////////////////////////////////////////////////////////////
 //                                                                              //
