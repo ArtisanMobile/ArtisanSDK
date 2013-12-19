@@ -60,4 +60,22 @@ extern NSString *const ARManagerNeverEnableArtisanGesture;
 */
 +(void)startWithAppId:(NSString *)appId version:(NSString *)version options:(NSDictionary *)options __attribute__((deprecated));
 
+/** Set userId for Artisan Logging.
+ *
+ * Use this method to setup the userId for sending a log message through the Artisan SDK.
+ *
+ * @param userId The string used to uniquely identify a user's device.
+ *
+ */
++(void)setLogMessageUserId:(NSString *)userId;
+
+/** Log a message.
+ *
+ * Use this method to send a log message through the Artisan SDK.
+ *
+ * @param message The log message.
+ *
+ */
++(void)logMessage:(NSString *)message;
+
 @end
