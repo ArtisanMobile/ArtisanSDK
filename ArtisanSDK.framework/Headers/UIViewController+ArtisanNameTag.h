@@ -1,9 +1,7 @@
 //
 //  UIViewController+ArtisanNameTag.h
-//  TestSepta
 //
-//  Created by Michael Raber on 3/13/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2014 Artisan Mobile. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -1,7 +1,7 @@
 //
 //  ARExperimentManager.h
 //
-//  Copyright (c) 2013 Artisan Mobile. All rights reserved.
+//  Copyright (c) 2014 Artisan Mobile. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

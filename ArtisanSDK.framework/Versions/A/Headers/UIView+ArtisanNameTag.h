@@ -1,9 +1,7 @@
 //
 //  UIView+ArtisanNameTag.h
-//  ARUXFLIP
 //
-//  Created by Michael Raber on 10/16/13.
-//
+//  Copyright (c) 2014 Artisan Mobile. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
