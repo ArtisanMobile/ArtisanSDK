@@ -67,7 +67,7 @@
 + (NSDictionary *)getSingleValuePowerHooks;
 
 /**
- * Registers a Power Hook Code Block for use with Artisan.
+ * Registers a Power Hook Block for use with Artisan.
  *
  * Use this method to declare the existence of a code block you would like to use in your app with data that is configurable from Artisan.
  * This declaration should occur in the `didFinishLaunchingWithOptions:` method of your main app delegate, *before* you start Artisan using the `[ARManager startWithAppId:version:]` method.
@@ -75,6 +75,7 @@
  * @param blockId The name of the code to register. Name must be unique for this app.
  * @param friendlyName The name for this code block that will be displayed in Artisan Tools.
  * @param data The default data for this code block. This should be string keys and values. This data will be used if no data is passed in from Artisan Tools for this code block for this app.
+ * @param block The reusable block of code that you are registering with Artisan. When you later call executeBlock you can provide extra_data and context that can be used by your block. We will merge the values from Artisan Tools with this extra data.
  */
 + (void)registerBlockWithId:(NSString *)blockId friendlyName:(NSString *)friendlyName data:(NSDictionary *)data andBlock:(void (^)(NSDictionary *extra_data, id context)) block;
 
@@ -84,9 +85,10 @@
  * Use this method to execute a Power Hook Code Block from Artisan.  This will use the values specified in Artisan Tools to execute the block. The default data will be used if none has been specified in Artisan Tools.
  *
  * @param blockId The name of the code to register. Name must be unique for this app. If no block has been registered with the given id this will do nothing.
- * @param data Additional data to use when executing this block. If any keys match, this data will override the defaults and any values that come from Artisan Tools.
+ * @param extra_data Additional data to use when executing this block. If any keys match, this data will override the defaults and any values that come from Artisan Tools.
+ * @param context Any object that you would like to pass in that is used in the block.
  */
-+ (void)executeBlockWithId:(NSString *)blockId data:(NSDictionary *)data context:(id)context;
++ (void)executeBlockWithId:(NSString *)blockId data:(NSDictionary *)extra_data context:(id)context;
 
 /** Set the data for a code block manually.
  *
@@ -96,8 +98,7 @@
  *
  * @warning *Note:* This method is intended for local test and QA use only, and should *not* be used within production code.
  *
- * @param blockName The name of the code block setting whose data you want to set.
- *
+ * @param blockId The name of the code block setting whose data you want to set.
  * @param data The data you want to specify for this code block.  If the code block has not been registered, this will be ignored.
  */
 + (void)setDataForBlock:(NSString *)blockId data:(NSDictionary *)data;
