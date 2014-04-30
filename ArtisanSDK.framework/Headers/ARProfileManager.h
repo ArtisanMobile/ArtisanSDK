@@ -42,12 +42,11 @@ typedef enum { ARGenderMale, ARGenderFemale, ARGenderNA } ARGender;
 
 /** Specify the address for the current user.
  *
- * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.  Artisan will automatically convert this value to a latitude and longitude coordinate.
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
  *
- * @param address The address of the current user.  This address needs to be in CLGeocoder format.  Unrecognized or unparseable address strings will automatically be converted to 0°N / 0°E.
+ * @param address The address of the current user.
  *
  */
-
 +(void)setUserAddress:(NSString *)address;
 
 
@@ -153,7 +152,7 @@ typedef enum { ARGenderMale, ARGenderFemale, ARGenderNA } ARGender;
 
 /** Set or update the value associated with a custom string profile variable.
  *
- * This new value will be used as part of this user's personalization profile, and will be used from this pount forward for segmentation, targeting, and reporting purposes.
+ * This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
  *
  * @param value Value to use for the given variable.
  *
@@ -164,7 +163,7 @@ typedef enum { ARGenderMale, ARGenderFemale, ARGenderNA } ARGender;
 
 /** Set or update the value associated with a custom number profile variable.
  *
- * This new value will be used as part of this user's personalization profile, and will be used from this pount forward for segmentation, targeting, and reporting purposes.
+ * This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
  *
  * @param value Value to use for the given variable.
  *
@@ -175,7 +174,7 @@ typedef enum { ARGenderMale, ARGenderFemale, ARGenderNA } ARGender;
 
 /** Set or update the value associated with a custom date profile variable.
  *
- * This new value will be used as part of this user's personalization profile, and will be used from this pount forward for segmentation, targeting, and reporting purposes.
+ * This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
  *
  * @param value Value to use for the given variable.
  *
@@ -186,7 +185,7 @@ typedef enum { ARGenderMale, ARGenderFemale, ARGenderNA } ARGender;
 
 /** Set or update the value associated with a custom location profile variable.
  *
- * This new value will be used as part of this user's personalization profile, and will be used from this pount forward for segmentation, targeting, and reporting purposes.
+ * This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
  *
  * @param value Value to use for the given variable.
  *
