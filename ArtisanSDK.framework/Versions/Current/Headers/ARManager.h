@@ -3,7 +3,7 @@
 //
 //  Copyright (c) 2014 Artisan Mobile. All rights reserved.
 //
-//  version: 2.1.0
+//  version: 2.1.1
 //
 
 #import <Foundation/Foundation.h>
@@ -79,5 +79,34 @@ extern NSString *const ARManagerNeverEnableArtisanGesture;
  *
  */
 +(void)logMessage:(NSString *)message;
+
+/** Register block for callback when the first play list is downloaded.
+ *
+ * Use this method to register a block for callback the first time an Artisan playlist is downloaded.  This call is non-blocking so code execution will continue immediately to the next line of code.
+ *
+ * The thread calling the block of code is not gaurenteed to be the main thread.  If the code inside of the block requires executing on the main thread you will need to implement this logic.
+ *
+ * If the first playlist has already been downloaded when this call is made this becomes a blocking call and the block of code is executed immediately.
+ *
+ * @param block The block of code to be executed.
+ *
+ */
++(void) onFirstPlaylistDownloaded:(void (^)()) block;
+
+/** Register block for callback when the first play list is downloaded.
+ *
+ * Use this method to register a block for callback the first time an Artisan playlist is downloaded.  This call is non-blocking so code execution will continue immediately to the next line of code.
+ *
+ * The thread calling the block of code is guaranteed to be the main thread.  If the code inside of the block requires executing on a background thread you will need to implement this logic.
+ *
+ * If the first playlist has already been downloaded when this call is made this becomes a blocking call and the block of code is executed immediately.
+ *
+ * If the timeout is greater than zero the block of code will fire the earliest of the timeout expiring or the first playlist is downloaded.
+ *
+ * @param block The block of code to be executed.
+ * @param timeout The timeout interval in seconds to wait for the playlist to be downloaded.
+ *
+ */
++(void) onFirstPlaylistDownloaded:(void (^)()) block withTimeout:(NSTimeInterval)timeout;
 
 @end

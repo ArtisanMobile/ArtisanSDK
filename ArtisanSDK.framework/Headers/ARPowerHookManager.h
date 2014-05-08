@@ -5,6 +5,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ARPowerHookVariable.h"
 
 /**
 * Manages all Power Hooks used with Artisan. This includes:
@@ -21,7 +22,7 @@
 *
 * All hooks created using ARPowerHookManager are registered with Artisan Tools automatically when you connect your device to Artisan for the first time.  The registration process will detect all registered hook keys, and will display all of the hooks and code blocks for this app in Artisan Tools where they can be edited.  Values set on hooks on the web will automatically be downloaded by all devices upon app startup, allowing for their usage throughout your system code.
 */
-@interface ARPowerHookManager : NSOperation
+@interface ARPowerHookManager : NSObject
 
 /**
 * Registers a single-value (non-code-block) Power Hook for use with Artisan.
@@ -65,6 +66,14 @@
  * You don't need to call startAppWithId:variantName prior to calling getSingleValuePowerHooks.
  */
 + (NSDictionary *)getSingleValuePowerHooks;
+
+/** Retrieve an ARPowerHookVariable instance for the passed in hookId.
+ *
+ * Returns an ARPowerHookVariable instance.  The ARPowerHookVariable instance is immutable and will contain the current value.
+ *
+ * @param hookId The name of the Power Hook whose ARPowerHookVariable instance you want to retrieve.
+ */
++(ARPowerHookVariable *) getPowerHookVariable:(NSString *)hookId;
 
 /**
  * Registers a Power Hook Block for use with Artisan.
@@ -110,5 +119,18 @@
  * You don't need to call startAppWithId:variantName prior to calling getSingleValuePowerHooks.
  */
 + (NSDictionary *)getAllCodeBlocksData;
+
+/** Register a block for callback when any Power Hook variables have changed.
+ *
+ * The thread calling the block of code is guaranteed to be the main thread.  If the code inside of the block requires executing on a background thread you will need to implement this logic.
+ *
+ * The block accepts the parameter `previewMode` which identifies if the app is currently in previewMode or not.
+ *
+ * This call should be made each time the containing class (i.e. UIViewController) is used (i.e. viewWillAppear).
+ *
+ * @param block The block of code to be executed.
+ *
+ */
++(void) onPowerHooksChanged:(void (^)(BOOL previewMode)) block;
 
 @end

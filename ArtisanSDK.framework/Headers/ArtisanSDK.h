@@ -13,6 +13,7 @@
 #import <ArtisanSDK/UIView+ArtisanNameTag.h>
 #import <ARtisanSDK/UIViewController+ArtisanNameTag.h>
 #import <ArtisanSDK/ARPowerHookManager.h>
+#import <ArtisanSDK/ARPowerHookVariable.h>
 #import <ArtisanSDK/UITableView+ArtisanPublic.h>
 #import <ArtisanSDK/UITableViewCell+ArtisanPublic.h>
 
