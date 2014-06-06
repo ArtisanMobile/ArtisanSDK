@@ -208,4 +208,10 @@
 
 +(NSDictionary *)getExperiments;
 
+/** Retrieve the list of all currently active experiment variation ids
+ *
+ * Returns an `NSSet` of the current experiment variation ids, where the elements are the `NSString` names of the experiment variation ids.
+ */
++(NSSet*)getCurrentVariationIds;
+
 @end

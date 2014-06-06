@@ -88,6 +88,36 @@
  */
 + (void)registerBlockWithId:(NSString *)blockId friendlyName:(NSString *)friendlyName data:(NSDictionary *)data andBlock:(void (^)(NSDictionary *extra_data, id context)) block;
 
+
+/**
+ * TODO: Need comment here
+ */
++ (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId
+                                       UIElement:(id)element
+                                       attribute:(NSString *)attribute;
+
+/**
+ * TODO: Need comment here
+ */
++ (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId
+                                stringWithFormat:(NSString *)stringWithFormat
+                                       UIElement:(id)element
+                                       attribute:(NSString *)attribute;
+
+/**
+ * TODO: Need comment here
+ */
++ (void)bindPowerHookAsIntegerToUIElementProperty:(NSString *)powerHookId
+                                 stringWithFormat:(NSString *)stringWithFormat
+                                        UIElement:(id)element
+                                        attribute:(NSString *)attribute;
+/**
+ * TODO: Need comment here
+ */
++ (void)bindPowerHookAsFloatToUIElementProperty:(NSString *)powerHookId
+                               stringWithFormat:(NSString *)stringWithFormat
+                                      UIElement:(id)element
+                                      attribute:(NSString *)attribute;
 /**
  * Execute the Power Hook Code Block
  *

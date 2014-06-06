@@ -3,7 +3,7 @@
 //
 //  Copyright (c) 2014 Artisan Mobile. All rights reserved.
 //
-//  version: 2.1.1
+//  version: 2.1.2
 //
 
 #import <Foundation/Foundation.h>
@@ -61,6 +61,14 @@ extern NSString *const ARManagerNeverEnableArtisanGesture;
 * @param options Dictionary of configuration options. These options will override the Artisan defaults.
 */
 +(void)startWithAppId:(NSString *)appId version:(NSString *)version options:(NSDictionary *)options __attribute__((deprecated));
+
+/** Start your Artisan instance.
+ *
+ * Use this method to start Artisan.  This declaration should occur at the top of the `didFinishLaunchingWithOptions:` method of your main app delegate.
+ *
+ * This function assume you have ArtisanConfiguration.plist in your project with an AppID set
+ */
++(void)startWithConfigurationFile;
 
 /** Set userId for Artisan Logging.
  *
