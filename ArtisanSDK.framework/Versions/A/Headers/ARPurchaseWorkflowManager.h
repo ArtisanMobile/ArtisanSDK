@@ -11,6 +11,7 @@
 /**
  *  Manages a purchase workflow with Artisan. This includes recording Artisan analytics events for:
  *
+ *  - when items are viewed by the customer
  *  - when items are added or removed from the customer's cart.
  *  - when the cart is abandoned (user left the app without checking out)
  *  - when the customer checks out successfully or unsuccessfully
@@ -24,11 +25,23 @@
  */
 @interface ARPurchaseWorkflowManager : NSObject
 
-
 /**
-TODO: Audrey Magic Comments
- */
+ Record an analytics event for a customer viewing a product. Uses the [NSLocale currentLocale] by default for the price locale.
 
+    [ARPurchaseWorkflowManager productViewedWithProductIdentifier:@"ABC0000001"
+                                                          atPrice:[NSNumber numberWithFloat:24.99f]
+                                                   andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
+                                                      andCategory:@"T-Shirts"
+                                                       andQuanity:[NSNumber numberWithInt:1]
+                                                  withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
+
+
+ @param productIdentifier An identifier for the product.
+ @param price             The price of the item.
+ @param description       A description of the product.
+ @param category          The category that you would like to record for this product.
+ @param productInfo       (optional, may be nil) a dictionary of any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored.
+*/
 + (void)productViewedWithProductIdentifier:(NSString *)productIdentifier
                                    atPrice:(NSNumber *)price
                             andDescription:(NSString *)description
@@ -36,7 +49,22 @@ TODO: Audrey Magic Comments
                            withProductInfo:(NSDictionary *)productInfo;
 
 /**
- TODO: Audrey Magic Comments
+ Record an analytics event for a customer viewing a product.
+
+    [ARPurchaseWorkflowManager productViewedWithProductIdentifier:@"ABC0000001"
+                                                          atPrice:[NSNumber numberWithFloat:24.99f]
+                                                  withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+                                                   andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
+                                                      andCategory:@"T-Shirts"
+                                                       andQuanity:[NSNumber numberWithInt:1]
+                                                  withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
+
+ @param productIdentifier An identifier for the product.
+ @param price             The price of the item.
+ @param priceLocale       The locale of the given price value.
+ @param description       A description of the product.
+ @param category          The category that you would like to record for this product.
+ @param productInfo       (optional, may be nil) a dictionary of any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored.
  */
 + (void)productViewedWithProductIdentifier:(NSString *)productIdentifier
                                    atPrice:(NSNumber *)price

@@ -90,14 +90,23 @@
 
 
 /**
- * TODO: Need comment here
+ *  Bind a power hook to a string property on one of your UI elements
+ *
+ *  @param powerHookId the hookId of your power hook. This is the same id that you registered it with in your AppDelegate
+ *  @param element     The UI element that you'd like to bind a property on, for example a UIButton.
+ *  @param attribute   The attribute of the given element that you'd like to bind this pwoer hook to.
  */
 + (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId
                                        UIElement:(id)element
                                        attribute:(NSString *)attribute;
 
 /**
- * TODO: Need comment here
+ *  Bind a power hook to a string property on one of your UI elements. The power hook value will be passed into the string with format as a string.
+ *
+ *  @param powerHookId the hookId of your power hook. This is the same id that you registered it with in your AppDelegate
+ *  @param stringWithFormat The string to bind to the attribute for the given element. The power hook value will be passed in as the argument to the string with format, so you should have just one token to replace.
+ *  @param element     The UI element that you'd like to bind a property on, for example a UIButton.
+ *  @param attribute   The attribute of the given element that you'd like to bind this pwoer hook to.
  */
 + (void)bindPowerHookAsStringToUIElementProperty:(NSString *)powerHookId
                                 stringWithFormat:(NSString *)stringWithFormat
@@ -105,19 +114,30 @@
                                        attribute:(NSString *)attribute;
 
 /**
- * TODO: Need comment here
+ *  Bind a power hook to a string property on one of your UI elements. The power hook value will be passed into the string with format as an int.
+ *
+ *  @param powerHookId the hookId of your power hook. This is the same id that you registered it with in your AppDelegate. This power hook should have a value that can be cast to an int.
+ *  @param stringWithFormat The string to bind to the attribute for the given element. The power hook value will be passed in as the argument to the string with format, so you should have just one token to replace.
+ *  @param element     The UI element that you'd like to bind a property on, for example a UIButton.
+ *  @param attribute   The attribute of the given element that you'd like to bind this pwoer hook to.
  */
 + (void)bindPowerHookAsIntegerToUIElementProperty:(NSString *)powerHookId
                                  stringWithFormat:(NSString *)stringWithFormat
                                         UIElement:(id)element
                                         attribute:(NSString *)attribute;
 /**
- * TODO: Need comment here
+ *  Bind a power hook to a string property on one of your UI elements. The power hook value will be passed into the string with format as a float.
+ *
+ *  @param powerHookId the hookId of your power hook. This is the same id that you registered it with in your AppDelegate. This power hook should have a value that can be cast to a float.
+ *  @param stringWithFormat The string to bind to the attribute for the given element. The power hook value will be passed in as the argument to the string with format, so you should have just one token to replace.
+ *  @param element     The UI element that you'd like to bind a property on, for example a UIButton.
+ *  @param attribute   The attribute of the given element that you'd like to bind this pwoer hook to.
  */
 + (void)bindPowerHookAsFloatToUIElementProperty:(NSString *)powerHookId
                                stringWithFormat:(NSString *)stringWithFormat
                                       UIElement:(id)element
                                       attribute:(NSString *)attribute;
+
 /**
  * Execute the Power Hook Code Block
  *
