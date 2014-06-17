@@ -3,7 +3,7 @@
 //
 //  Copyright (c) 2014 Artisan Mobile. All rights reserved.
 //
-//  version: 2.1.4
+//  version: 2.1.5
 //
 
 #import <Foundation/Foundation.h>
@@ -116,5 +116,12 @@ extern NSString *const ARManagerNeverEnableArtisanGesture;
  *
  */
 +(void) onFirstPlaylistDownloaded:(void (^)()) block withTimeout:(NSTimeInterval)timeout;
+
+/** Check if the first Artisan playlist has been downloaded
+ *
+ * Use this method to see if the Artisan playlist has already been downloaded at least once
+ *
+ */
++(BOOL) hasFirstPlaylistDownloaded;
 
 @end

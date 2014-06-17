@@ -202,16 +202,22 @@
 +(void)startExperiment:(NSString *)experimentName variantName:(NSString *)variantName;
 
 /** Retrieve all registered in-code experiments.
-*
-* Returns an `NSDictionary` of the current experiments, where the keys are the `NSString` names of the experiments, and the values are `ARExperiment` objects. You don't need to call startAppWithId:variantName prior to calling getExperiments.
-*/
-
-+(NSDictionary *)getExperiments;
+ *
+ * Returns an `NSDictionary` of the current experiments, where the keys are the `NSString` names of the experiments, and the values are `ARExperimentDetails` objects. You don't need to call startAppWithId:variantName prior to calling getExperimentDetails.
+ */
++(NSDictionary *)getCurrentExperimentDetails;
 
 /** Retrieve the list of all currently active experiment variation ids
  *
  * Returns an `NSSet` of the current experiment variation ids, where the elements are the `NSString` names of the experiment variation ids.
  */
 +(NSSet*)getCurrentVariationIds;
+
+/** Retrieve all registered in-code experiments.
+ *
+ * Returns an `NSDictionary` of the current experiments, where the keys are the `NSString` names of the experiments, and the values are `ARExperiment` objects. You don't need to call startAppWithId:variantName prior to calling getExperiments.
+ */
+
++(NSDictionary *)getExperiments;
 
 @end

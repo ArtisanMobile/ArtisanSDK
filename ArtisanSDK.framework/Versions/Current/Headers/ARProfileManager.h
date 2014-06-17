@@ -33,6 +33,7 @@ typedef enum { ARGenderMale, ARGenderFemale, ARGenderNA } ARGender;
 /** Specify the age for the current user.
  *
  * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the age in years of the current user.
  *
  * @param age The age of the current user.
  */
