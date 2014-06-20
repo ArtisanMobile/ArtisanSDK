@@ -1,9 +1,7 @@
 //
 //  ARPurchaseWorkflowManager.h
-//  ARUXFLIP
 //
-//  Created by Scott Wasserman on 4/9/14.
-//
+//  Copyright (c) 2014 Artisan Mobile. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
