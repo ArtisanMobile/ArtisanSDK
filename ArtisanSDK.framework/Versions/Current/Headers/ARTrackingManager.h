@@ -36,4 +36,6 @@
 
 + (void)trackEvent:(NSString *)eventName parameters:(NSDictionary *)parameters;
 
++ (void)trackWebViewElement:(NSString *)eventName parameters:(NSDictionary *)parameters;
++ (void)trackWebViewPage:(NSString *)url;
 @end

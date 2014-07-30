@@ -11,9 +11,11 @@
 #import <ArtisanSDK/ARProfileManager.h>
 #import <ArtisanSDK/ARTrackingManager.h>
 #import <ArtisanSDK/UIView+ArtisanNameTag.h>
-#import <ARtisanSDK/UIViewController+ArtisanNameTag.h>
+#import <ArtisanSDK/UIViewController+ArtisanNameTag.h>
 #import <ArtisanSDK/ARPowerHookManager.h>
 #import <ArtisanSDK/ARPowerHookVariable.h>
+#import <ArtisanSDK/ARPurchaseWorkflowManager.h>
+#import <ArtisanSDK/ARSocialSharingManager.h>
 #import <ArtisanSDK/UITableView+ArtisanPublic.h>
 #import <ArtisanSDK/UITableViewCell+ArtisanPublic.h>
 
