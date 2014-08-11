@@ -30,7 +30,7 @@
                                                           atPrice:[NSNumber numberWithFloat:24.99f]
                                                    andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
                                                       andCategory:@"T-Shirts"
-                                                       andQuanity:[NSNumber numberWithInt:1]
+                                                       andQuantity:[NSNumber numberWithInt:1]
                                                   withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
 
 
@@ -54,7 +54,7 @@
                                                   withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
                                                    andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
                                                       andCategory:@"T-Shirts"
-                                                       andQuanity:[NSNumber numberWithInt:1]
+                                                       andQuantity:[NSNumber numberWithInt:1]
                                                   withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
 
  @param productIdentifier An identifier for the product.
@@ -78,7 +78,7 @@
                                                           atPrice:[NSNumber numberWithFloat:24.99f]
                                                    andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
                                                       andCategory:@"T-Shirts"
-                                                       andQuanity:[NSNumber numberWithInt:1]
+                                                       andQuantity:[NSNumber numberWithInt:1]
                                                   withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
 
  @param productIdentifier An identifier for the product.
@@ -92,7 +92,7 @@
                                    atPrice:(NSNumber *)price
                             andDescription:(NSString *)description
                                andCategory:(NSString *)category
-                                andQuanity:(NSNumber *)quantity
+                                andQuantity:(NSNumber *)quantity
                            withProductInfo:(NSDictionary *)productInfo;
 
 
@@ -104,7 +104,7 @@
                                                   withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
                                                    andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
                                                       andCategory:@"T-Shirts"
-                                                       andQuanity:[NSNumber numberWithInt:1]
+                                                       andQuantity:[NSNumber numberWithInt:1]
                                                   withProductInfo:@{ @"style":@"organic cotton", @"size":@"medium" }];
 
  @param productIdentifier An identifier for the product
@@ -120,7 +120,7 @@
                            withPriceLocale:(NSLocale *)priceLocale
                             andDescription:(NSString *)description
                                andCategory:(NSString *)category
-                                andQuanity:(NSNumber *)quantity
+                                andQuantity:(NSNumber *)quantity
                            withProductInfo:(NSDictionary *)productInfo;
 
 
@@ -133,7 +133,7 @@
                                                                atPrice:[NSNumber numberWithFloat:24.99f]
                                                         andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
                                                            andCategory:@"T-Shirts"
-                                                            andQuanity:[NSNumber numberWithInt:1]];
+                                                            andQuantity:[NSNumber numberWithInt:1]];
 
  @param productIdentifier The identifier of the cart item that should be removed
  @param price             The price of the cart item that should be removed
@@ -145,7 +145,7 @@
                                         atPrice:(NSNumber *)price
                                  andDescription:(NSString *)description
                                     andCategory:(NSString *)category
-                                     andQuanity:(NSNumber *)quantity;
+                                     andQuantity:(NSNumber *)quantity;
 
 
 /**
