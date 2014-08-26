@@ -213,11 +213,4 @@
  */
 +(NSSet*)getCurrentVariationIds;
 
-/** Retrieve all registered in-code experiments.
- *
- * Returns an `NSDictionary` of the current experiments, where the keys are the `NSString` names of the experiments, and the values are `ARExperiment` objects. You don't need to call startAppWithId:variantName prior to calling getExperiments.
- */
-
-+(NSDictionary *)getExperiments;
-
 @end

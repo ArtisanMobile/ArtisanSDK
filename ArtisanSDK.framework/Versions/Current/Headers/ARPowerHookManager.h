@@ -81,6 +81,8 @@
  * Use this method to declare the existence of a code block you would like to use in your app with data that is configurable from Artisan.
  * This declaration should occur in the `didFinishLaunchingWithOptions:` method of your main app delegate, *before* you start Artisan using the `[ARManager startWithAppId:version:]` method.
  *
+ * *NOTE:* If this block is executed from an Artisan Push message or URL the thread calling the block of code is guaranteed to be the main thread. If the code inside of the block requires executing on a background thread you will need to implement this logic.
+ *
  * @param blockId The name of the code to register. Name must be unique for this app.
  * @param friendlyName The name for this code block that will be displayed in Artisan Tools.
  * @param data The default data for this code block. This should be string keys and values. This data will be used if no data is passed in from Artisan Tools for this code block for this app.

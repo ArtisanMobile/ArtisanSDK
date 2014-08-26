@@ -17,8 +17,223 @@ typedef enum { ARGenderMale, ARGenderFemale, ARGenderNA } ARGender;
  *
  * ARProfileManager is a singleton that is automatically initialized when your app starts.  Use ARProfileManager to manage the personalization profile for the current user from app inception to completion.
  */
-
 @interface ARProfileManager : NSObject
+
+/** Specify the prefix for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the prefix of the current user (Mr, Ms, Mrs, etc)
+ *
+ * @param userPrefix The prefix of the current user.
+ */
++(void)setUserPrefix:(NSString *)userPrefix;
+
+/** Specify the first name for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the first name of the current user as a string.
+ *
+ * @param userFirstName The first name of the current user.
+ */
++(void)setUserFirstName:(NSString *)userFirstName;
+
+/** Specify the middle name for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the middle name of the current user as a string.
+ *
+ * @param userMiddleName The middle name of the current user.
+ */
++(void)setUserMiddleName:(NSString *)userMiddleName;
+
+/** Specify the last name for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the last name of the current user as a string.
+ *
+ * @param userLastName The last name of the current user.
+ */
++(void)setUserLastName:(NSString *)userLastName;
+
+/** Specify the suffix for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the suffix of the current user (Jr, Sr, I, etc)
+ *
+ * @param userSuffix The suffix of the current user.
+ */
++(void)setUserSuffix:(NSString *)userSuffix;
+
+/** Specify the email for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the email of the current user
+ *
+ * @param userEmail The email of the current user.
+ */
++(void)setUserEmail:(NSString *)userEmail;
+
+/** Specify the phone number for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the phone number of the current user as a string
+ *
+ * @param userPhoneNumber The phone number of the current user.
+ */
++(void)setUserPhoneNumber:(NSString *)userPhoneNumber;
+
+/** Specify the company name for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the company name of the current user
+ *
+ * @param userCompany The company name of the current user.
+ */
++(void)setUserCompanyName:(NSString *)userCompany;
+
+/** Specify the date first seen for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the first seen date of the current user
+ *
+ * @param firstSeen The date first seen of the current user.
+ */
++(void)setFirstSeen:(NSDate *)firstSeen;
+
+/** Specify the sign up date for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the sign up date of the current user
+ *
+ * @param signUp The sign up date of the current user.
+ */
++(void)setSignUpDate:(NSDate *)signUp;
+
+/** Specify the twitter name for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the twitter name of the current user
+ *
+ * @param userTwitterName The twitter name of the current user.
+ */
++(void)setUserTwitterName:(NSString *)userTwitterName;
+
+/** Specify the facebook profile for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the facebook profile of the current user
+ *
+ * @param userFacebook The facebook profile of the current user.
+ */
++(void)setUserFacebook:(NSString *)userFacebook;
+
+/** Specify the url for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is the url of the current user
+ *
+ * @param userUrl The url of the current user.
+ */
++(void)setUserUrl:(NSString *)userUrl;
+
+/** Specify whether the user has opted out of push notifications.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is whether the user has opted out of push
+ *
+ * @param optedOutOfPush Whether the current user has push enabled.
+ */
++(void)setOptedOutPush:(BOOL)optedOutOfPush;
+
+/** Specify whether the user has opted out of text.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is whether the user has opted out of text
+ *
+ * @param optedOutOfText Whether the current user has text enabled.
+ */
++(void)setOptedOutText:(BOOL)optedOutOfText;
+
+/** Specify whether the user has opted out of email.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ * This is whether the user has opted out of email
+ *
+ * @param optedOutOfEmail Whether the current user has email enabled.
+ */
++(void)setOptedOutEmail:(BOOL)optedOutOfEmail;
+
+/** Specify the street address for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ *
+ * @param userStreet The street address of the current user.
+ *
+ */
++(void)setUserStreetAddress:(NSString *)userStreet;
+
+/** Specify the street address 2 for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ *
+ * @param userStreet2 The street address 2 of the current user (apartment number, etc)
+ *
+ */
++(void)setUserStreetAddress2:(NSString *)userStreet2;
+
+/** Specify the city for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ *
+ * @param userCity The city of the current user
+ *
+ */
++(void)setUserCity:(NSString *)userCity;
+
+/** Specify the state or province for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ *
+ * @param userStateProvince The state or province of the current user
+ *
+ */
++(void)setUserStateProvince:(NSString *)userStateProvince;
+
+/** Specify the country for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ *
+ * @param userCountry The country of the current user
+ *
+ */
++(void)setUserCountry:(NSString *)userCountry;
+
+/** Specify the postal code for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ *
+ * @param userPostalCode The postal code of the current user
+ *
+ */
++(void)setUserPostalCode:(NSString *)userPostalCode;
+
+/** Specify the referral source for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ *
+ * @param userReferralSource The referral source of the current user
+ *
+ */
++(void)setUserReferralSource:(NSString *)userReferralSource;
+
+/** Specify the avatar url for the current user.
+ *
+ * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
+ *
+ * @param userAvatar The avatar url of the current user
+ *
+ */
++(void)setUserAvatarUrl:(NSString *)userAvatar;
 
 /** Specify an external User ID for the current user.
  *
@@ -26,9 +241,7 @@ typedef enum { ARGenderMale, ARGenderFemale, ARGenderNA } ARGender;
  *
  * @param sharedUserId The ID string to associate with the current user.
  */
-
 +(void)setSharedUserId:(NSString *)sharedUserId;
-
 
 /** Specify the age for the current user.
  *
@@ -37,18 +250,7 @@ typedef enum { ARGenderMale, ARGenderFemale, ARGenderNA } ARGender;
  *
  * @param age The age of the current user.
  */
-
 +(void)setUserAge:(NSNumber*)age;
-
-
-/** Specify the address for the current user.
- *
- * This information is added to the personalization profile of the current user for segmentation, targeting, and reporting purposes.
- *
- * @param address The address of the current user.
- *
- */
-+(void)setUserAddress:(NSString *)address;
 
 
 /** Specify the gender of the current user.
@@ -58,7 +260,6 @@ typedef enum { ARGenderMale, ARGenderFemale, ARGenderNA } ARGender;
  * @param gender The gender of the current user.  Possible values for ARGender include ARGenderMale, ARGenderFemale, and ARGenderNA.
  *
  */
-
 +(void)setGender:(ARGender)gender;
 
 /** Register a custom profile variable for this user.
