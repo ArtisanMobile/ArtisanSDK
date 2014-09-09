@@ -410,9 +410,15 @@ typedef enum { ARGenderMale, ARGenderFemale, ARGenderNA } ARGender;
 /** Clear out all previously specified profile information.
  *
  * Use this method to clear out all data previously specified for the current user, including any data set via setSharedUserId:, setUserAge:, setUserAddress:, setGender:, setUserAddress:, and setValue:forVariable:.
- *
  */
-
 +(void)clearProfile;
+
+/** Clear the value for the specified user profile variable
+ *
+ * Use this method to clear a custom user profile variable for the current user. This is equivalent to setting the value to nil.
+ *
+ * To clear an Artisan-provided user profile variable like sharedUserId or userAge, simply set the value to nil with the provided setter method.
+ */
++(void)clearVariable:(NSString *)variableName;
 
 @end
