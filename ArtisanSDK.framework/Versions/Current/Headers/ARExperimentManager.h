@@ -201,11 +201,13 @@
 
 +(void)startExperiment:(NSString *)experimentName variantName:(NSString *)variantName;
 
-/** Retrieve all registered in-code experiments.
+/** Retrieve all current details for running experiments.
  *
- * Returns an `NSDictionary` of the current experiments, where the keys are the `NSString` names of the experiments, and the values are `ARExperimentDetails` objects. You don't need to call startAppWithId:variantName prior to calling getExperimentDetails.
+ * @warning It is suggested that the earliest you call this method is within the `[ArtisanManager onFirstPlaylistDownloaded:block]` callback.
+ *
+ * Returns an `NSArray` of the current experiments which are `ARExperimentDetails` objects.
  */
-+(NSDictionary *)getCurrentExperimentDetails;
++(NSArray *)getCurrentExperimentDetails;
 
 /** Retrieve the list of all currently active experiment variation ids
  *

@@ -7,55 +7,40 @@
 #import <Foundation/Foundation.h>
 
 /**
- * An object containing useful information about an in-code experiment
+ * An object containing useful information about an experiment
  **/
 
 @interface ARExperimentDetails : NSObject
 
 /**
+ * The id of the experiment.
+ */
+@property (nonatomic, readonly) NSString *experimentId;
+
+/**
  * The name of the experiment.
  */
-@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *experimentName;
 
 /**
- * The description of the experiment.
+ * The type of the experiment.
  */
-@property (nonatomic, readonly) NSString *descriptionOfExperiment;
+@property (nonatomic, retain) NSString *experimentType;
 
 /**
- * An `NSArray` containing the defined variants for the experiment (as `NSString` objects).
+ * The current variant id for the experiment.
  */
-@property (nonatomic, readonly) NSArray *variants;
+@property (nonatomic, retain) NSString *currentVariantId;
 
 /**
- * The name of the default variant for the experiment. If no variant has been
- * explicitly defined as the default, it's assumed to be the first variant
- * that was added.
+ * The current variant name for the experiment.
  */
-@property (nonatomic, readonly) NSString *defaultVariant;
-
-/**
- * The current variant for the test. If the test is not running, the
- * default variant is returned. When setting, any values that are not
- * already defined as variants will be ignored.
- */
-@property (nonatomic, retain) NSString *currentVariant;
-
-/**
- * Whether the experiment is currently running.
- */
-@property (nonatomic, readonly) BOOL isRunning;
-
+@property (nonatomic, retain) NSString *currentVariantName;
 
 /**
  * This is the init to build the ARExperimentDetails object.
  * You won't need to use this;
  */
-- (id)initWithName:(NSString *)name
-descriptionOfExperiment:(NSString *)descriptionOfExperiment
-    defaultVariant:(NSString *)defaultVariant
-          variants:(NSArray *)variants
-    currentVariant:(NSString *)currentVariant
-         isRunning:(BOOL)isRunning;
+- (id)initWithDictionary:(NSDictionary *)detailsDictionary;
 
 @end
