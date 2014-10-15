@@ -14,6 +14,7 @@
 * - Wrapping the code blocks to be executed for each variant
 * - Setting additional analytics events to be tracked for in-code experiments
 * - Setting the conversion target for an in-code experiment
+* - Retrieving information about experiments to tie into third party analytics tools
 * 
 * ARExperimentManager is a singleton that is automatically initialized when your app starts.  Use ARExperimentManager to manage all of your in-code experiments from inception to completion.
 * 
@@ -25,6 +26,7 @@
 *
 * - For in-code experiements employing this class, you should test them out prior to shipping to the app store using `startExperiment:variantName:`. This way you can preview their behavior and appearance.
 * - Don't forget to remove the call to `startExperiment:variantName:` before you ship.
+* - User the getCurrentExperimentDetails and getInCodeExperimentDetails methods to retrieve information on experiments
 *
 *
 * Usage Example
@@ -208,6 +210,30 @@
  * Returns an `NSArray` of the current experiments which are `ARExperimentDetails` objects.
  */
 +(NSArray *)getCurrentExperimentDetails;
+
+/** Retrieve details for all in-code experiments.
+ *
+ * Usage Example
+ * =============
+ *
+ *<code><pre>
+ * // in the view controller you're changing via your in-code experiment
+ *- (void) viewWillAppear:(BOOL)animated {
+ *    // Your other code...
+ *    NSDictionary *detailsDictionary = [ARExperimentManager getInCodeExperimentDetails];
+ *    ARInCodeExperimentDetails *inCodeDetails = [detailsDictionary objectForKey:@"Your Experiment Name"];
+ *
+ *    if (inCodeDetails.isRunning) {
+ *        // This experiment has been started from Artisan Tools and all details are available to you.
+ *        // You can use these details to feed into your third party analytics tool
+ *    }
+ *    // Your code continued...
+ *}
+ *</pre></code>
+ *
+ * Returns an `NSDictionary` of all in-code experiments where the keys are the in-code name of the experiment and the values are `ARInCodeExperimentDetail` objects.
+ */
++(NSDictionary *)getInCodeExperimentDetails;
 
 /** Retrieve the list of all currently active experiment variation ids
  *

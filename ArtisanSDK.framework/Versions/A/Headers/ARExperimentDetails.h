@@ -6,6 +6,13 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const DetailDictionaryExperimentNameKey;
+extern NSString *const DetailDictionaryExperimentIdKey;
+extern NSString *const DetailDictionaryExperimentTypeKey;
+extern NSString *const DetailDictionaryCurrentVariationKey;
+extern NSString *const DetailDictionaryCurrentVariationIdKey;
+extern NSString *const DetailDictionaryCurrentVariationNameKey;
+
 /**
  * An object containing useful information about an experiment
  **/
