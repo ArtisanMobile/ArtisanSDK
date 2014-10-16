@@ -18,6 +18,8 @@
 #import <ArtisanSDK/ARSocialSharingManager.h>
 #import <ArtisanSDK/UITableView+ArtisanPublic.h>
 #import <ArtisanSDK/UITableViewCell+ArtisanPublic.h>
+#import <ArtisanSDK/ARInCodeExperimentDetails.h>
+#import <ArtisanSDK/ARExperimentDetails.h>
 
 
 //////////////////////////////////////////////////////////////////////////////////
