@@ -23,6 +23,8 @@
  */
 @interface ARPurchaseWorkflowManager : NSObject
 
+#pragma mark - Product Viewed Without Locale
+
 /**
  Record an analytics event for a customer viewing a product. Uses the [NSLocale currentLocale] by default for the price locale.
 
@@ -30,7 +32,6 @@
                                                           atPrice:[NSNumber numberWithFloat:24.99f]
                                                    andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
                                                       andCategory:@"T-Shirts"
-                                                       andQuantity:[NSNumber numberWithInt:1]
                                                   withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
 
 
@@ -47,14 +48,70 @@
                            withProductInfo:(NSDictionary *)productInfo;
 
 /**
+ Record an analytics event for a customer viewing a product. Uses the [NSLocale currentLocale] by default for the price locale.
+ 
+ [ARPurchaseWorkflowManager productViewedWithProductIdentifier:@"ABC0000001"
+                                                       atPrice:[NSNumber numberWithFloat:24.99f]
+                                                andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
+                                                   andCategory:@"T-Shirts"
+                                                andSubCategory:@"Crew-Necks"
+                                               withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
+
+ 
+ 
+ @param productIdentifier An identifier for the product.
+ @param price             The price of the item.
+ @param description       A description of the product.
+ @param category          The category that you would like to record for this product.
+ @param subCategory       The subcategory that you would like to record for this product.
+ @param productInfo       (optional, may be nil) a dictionary of any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored.
+ */
++ (void)productViewedWithProductIdentifier:(NSString *)productIdentifier
+                                   atPrice:(NSNumber *)price
+                            andDescription:(NSString *)description
+                               andCategory:(NSString *)category
+                            andSubCategory:(NSString *)subCategory
+                           withProductInfo:(NSDictionary *)productInfo;
+
+/**
+ Record an analytics event for a customer viewing a product. Uses the [NSLocale currentLocale] by default for the price locale.
+ 
+ [ARPurchaseWorkflowManager productViewedWithProductIdentifier:@"ABC0000001"
+                                                       atPrice:[NSNumber numberWithFloat:24.99f]
+                                                andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
+                                                   andCategory:@"T-Shirts"
+                                                andSubCategory:@"Crew-Necks"
+                                             andSubSubCategory:@"Artisan Paint It Black Tee"
+                                               withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
+ 
+ 
+ 
+ @param productIdentifier An identifier for the product.
+ @param price             The price of the item.
+ @param description       A description of the product.
+ @param category          The category that you would like to record for this product.
+ @param subCategory       The sub category that you would like to record for this product.
+ @param subSubCategory    The sub sub category that you would like to record for this product.
+ @param productInfo       (optional, may be nil) a dictionary of any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored.
+ */
++ (void)productViewedWithProductIdentifier:(NSString *)productIdentifier
+                                   atPrice:(NSNumber *)price
+                            andDescription:(NSString *)description
+                               andCategory:(NSString *)category
+                            andSubCategory:(NSString *)subCategory
+                         andSubSubCategory:(NSString *)subSubCategory
+                           withProductInfo:(NSDictionary *)productInfo;
+
+#pragma mark - Product Viewed With Locale
+
+/**
  Record an analytics event for a customer viewing a product.
 
     [ARPurchaseWorkflowManager productViewedWithProductIdentifier:@"ABC0000001"
                                                           atPrice:[NSNumber numberWithFloat:24.99f]
-                                                  withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+                                                  withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]
                                                    andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
                                                       andCategory:@"T-Shirts"
-                                                       andQuantity:[NSNumber numberWithInt:1]
                                                   withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
 
  @param productIdentifier An identifier for the product.
@@ -70,6 +127,65 @@
                             andDescription:(NSString *)description
                                andCategory:(NSString *)category
                            withProductInfo:(NSDictionary *)productInfo;
+
+/**
+ Record an analytics event for a customer viewing a product.
+
+    [ARPurchaseWorkflowManager productViewedWithProductIdentifier:@"ABC0000001"
+                                                          atPrice:[NSNumber numberWithFloat:24.99f]
+                                                  withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]
+                                                   andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
+                                                      andCategory:@"T-Shirts"
+                                                   andSubCategory:@"Crew-Necks"
+                                                  withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
+
+ @param productIdentifier An identifier for the product.
+ @param price             The price of the item.
+ @param priceLocale       The locale of the given price value.
+ @param description       A description of the product.
+ @param category          The category that you would like to record for this product.
+ @param subCategory       The sub category that you would like to record for this product.
+ @param productInfo       (optional, may be nil) a dictionary of any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored.
+ */
++ (void)productViewedWithProductIdentifier:(NSString *)productIdentifier
+                                   atPrice:(NSNumber *)price
+                           withPriceLocale:(NSLocale *)priceLocale
+                            andDescription:(NSString *)description
+                               andCategory:(NSString *)category
+                            andSubCategory:(NSString *)subCategory
+                           withProductInfo:(NSDictionary *)productInfo;
+
+/**
+ Record an analytics event for a customer viewing a product.
+
+    [ARPurchaseWorkflowManager productViewedWithProductIdentifier:@"ABC0000001"
+                                                          atPrice:[NSNumber numberWithFloat:24.99f]
+                                                  withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]
+                                                   andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
+                                                      andCategory:@"T-Shirts"
+                                                   andSubCategory:@"Crew-Necks"
+                                                andSubSubCategory:@"Artisan Paint It Black Tee"
+                                                  withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
+ 
+ @param productIdentifier An identifier for the product.
+ @param price             The price of the item.
+ @param priceLocale       The locale of the given price value.
+ @param description       A description of the product.
+ @param category          The category that you would like to record for this product.
+ @param subCategory       The sub category that you would like to record for this product.
+ @param subSubCategory    The sub sub category that you would like to record for this product.
+ @param productInfo       (optional, may be nil) a dictionary of any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored.
+ */
++ (void)productViewedWithProductIdentifier:(NSString *)productIdentifier
+                                   atPrice:(NSNumber *)price
+                           withPriceLocale:(NSLocale *)priceLocale
+                            andDescription:(NSString *)description
+                               andCategory:(NSString *)category
+                            andSubCategory:(NSString *)subCategory
+                         andSubSubCategory:(NSString *)subSubCategory
+                           withProductInfo:(NSDictionary *)productInfo;
+
+#pragma mark - Add Item To Cart Without Locale
 
 /**
  Add an item to the cart for the current purchase workflow. Uses the [NSLocale currentLocale] by default for the price locale.
@@ -95,6 +211,65 @@
                                 andQuantity:(NSNumber *)quantity
                            withProductInfo:(NSDictionary *)productInfo;
 
+/**
+ Add an item to the cart for the current purchase workflow. Uses the [NSLocale currentLocale] by default for the price locale.
+
+    [ARPurchaseWorkflowManager addItemToCartWithProductIdentifier:@"ABC0000001"
+                                                          atPrice:[NSNumber numberWithFloat:24.99f]
+                                                   andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
+                                                      andCategory:@"T-Shirts"
+                                                   andSubCategory:@"Crew-Necks"
+                                                       andQuantity:[NSNumber numberWithInt:1]
+                                                  withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
+
+ @param productIdentifier An identifier for the product.
+ @param price             The price of the item. This should be the price of a single item.
+ @param description       A description of the product.
+ @param category          The category that you would like to record for this product.
+ @param subCategory       The sub category that you would like to record for this product.
+ @param quantity          The quantity of the product.
+ @param productInfo       (optional, may be nil) a dictionary of any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored.
+ */
++ (void)addItemToCartWithProductIdentifier:(NSString *)productIdentifier
+                                   atPrice:(NSNumber *)price
+                            andDescription:(NSString *)description
+                               andCategory:(NSString *)category
+                            andSubCategory:(NSString *)subCategory
+                                andQuantity:(NSNumber *)quantity
+                           withProductInfo:(NSDictionary *)productInfo;
+
+/**
+ Add an item to the cart for the current purchase workflow. Uses the [NSLocale currentLocale] by default for the price locale.
+
+    [ARPurchaseWorkflowManager addItemToCartWithProductIdentifier:@"ABC0000001"
+                                                          atPrice:[NSNumber numberWithFloat:24.99f]
+                                                   andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
+                                                      andCategory:@"T-Shirts"
+                                                   andSubCategory:@"Crew-Necks"
+                                                andSubSubCategory:@"Artisan Paint It Black Tee"
+                                                       andQuantity:[NSNumber numberWithInt:1]
+                                                  withProductInfo:@{@"style":@"organic cotton",@"size":@"medium"}];
+
+ @param productIdentifier An identifier for the product.
+ @param price             The price of the item. This should be the price of a single item.
+ @param description       A description of the product.
+ @param category          The category that you would like to record for this product.
+ @param subCategory       The sub category that you would like to record for this product.
+ @param subSubCategory    The sub sub category that you would like to record for this product.
+ @param quantity          The quantity of the product.
+ @param productInfo       (optional, may be nil) a dictionary of any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored.
+ */
++ (void)addItemToCartWithProductIdentifier:(NSString *)productIdentifier
+                                   atPrice:(NSNumber *)price
+                            andDescription:(NSString *)description
+                               andCategory:(NSString *)category
+                            andSubCategory:(NSString *)subCategory
+                         andSubSubCategory:(NSString *)subSubCategory
+                                andQuantity:(NSNumber *)quantity
+                           withProductInfo:(NSDictionary *)productInfo;
+
+
+#pragma mark - Add Item To Cart With Locale
 
 /**
  Add an item to the cart for the current purchase workflow.
@@ -123,6 +298,71 @@
                                 andQuantity:(NSNumber *)quantity
                            withProductInfo:(NSDictionary *)productInfo;
 
+/**
+ Add an item to the cart for the current purchase workflow.
+
+    [ARPurchaseWorkflowManager addItemToCartWithProductIdentifier:@"ABC0000001"
+                                                          atPrice:[NSNumber numberWithFloat:24.99f]
+                                                  withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+                                                   andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
+                                                      andCategory:@"T-Shirts"
+                                                   andSubCategory:@"Crew-Necks"
+                                                       andQuantity:[NSNumber numberWithInt:1]
+                                                  withProductInfo:@{ @"style":@"organic cotton", @"size":@"medium" }];
+
+ @param productIdentifier An identifier for the product
+ @param price             The price of the item. This should be the price of a single item.
+ @param priceLocale       The locale of the given price value.
+ @param description       A description of the product.
+ @param category          The category that you would like to record for this product.
+ @param subCategory       The sub category that you would like to record for this product.
+ @param quantity          The quantity of the product.
+ @param productInfo       (optional, may be nil) a dictionary of any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored.
+ */
++ (void)addItemToCartWithProductIdentifier:(NSString *)productIdentifier
+                                   atPrice:(NSNumber *)price
+                           withPriceLocale:(NSLocale *)priceLocale
+                            andDescription:(NSString *)description
+                               andCategory:(NSString *)category
+                            andSubCategory:(NSString *)subCategory
+                                andQuantity:(NSNumber *)quantity
+                           withProductInfo:(NSDictionary *)productInfo;
+
+/**
+ Add an item to the cart for the current purchase workflow.
+
+    [ARPurchaseWorkflowManager addItemToCartWithProductIdentifier:@"ABC0000001"
+                                                          atPrice:[NSNumber numberWithFloat:24.99f]
+                                                  withPriceLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+                                                   andDescription:@"Artisan T-Shirt made in Old City, Philadelphia"
+                                                      andCategory:@"T-Shirts"
+                                                   andSubCategory:@"Crew-Necks"
+                                                andSubSubCategory:@"Artisan Paint It Black Tee"
+                                                       andQuantity:[NSNumber numberWithInt:1]
+                                                  withProductInfo:@{ @"style":@"organic cotton", @"size":@"medium" }];
+
+ @param productIdentifier An identifier for the product
+ @param price             The price of the item. This should be the price of a single item.
+ @param priceLocale       The locale of the given price value.
+ @param description       A description of the product.
+ @param category          The category that you would like to record for this product.
+ @param subCategory       The sub category that you would like to record for this product.
+ @param subSubCategory    The sub sub category that you would like to record for this product.
+ @param quantity          The quantity of the product.
+ @param productInfo       (optional, may be nil) a dictionary of any key/value pairs of information about this product. This data will be attached to the analytics event in Artisan. All keys and values must be NSString objects, or they will be ignored.
+ */
++ (void)addItemToCartWithProductIdentifier:(NSString *)productIdentifier
+                                   atPrice:(NSNumber *)price
+                           withPriceLocale:(NSLocale *)priceLocale
+                            andDescription:(NSString *)description
+                               andCategory:(NSString *)category
+                            andSubCategory:(NSString *)subCategory
+                         andSubSubCategory:(NSString *)subSubCategory
+                                andQuantity:(NSNumber *)quantity
+                           withProductInfo:(NSDictionary *)productInfo;
+
+
+#pragma mark - Remove Item From Cart
 
 /**
  Call this method to remove an item from the Artisan cart model for the current purchase workflow.
