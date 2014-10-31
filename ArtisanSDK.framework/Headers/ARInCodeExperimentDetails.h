@@ -2,7 +2,7 @@
 //  ARInCodeExperimentDetails.h
 //  ARUXFLIP
 //
-//  Created by Matt Gowie on 9/30/14.
+//  Copyright (c) 2014 Artisan Mobile. All rights reserved.
 //
 //
 

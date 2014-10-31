@@ -2,7 +2,6 @@
 //  ARBillboardManager.h
 //  MarketingBillboardTest
 //
-//  Created by Scott Wasserman on 9/2/14.
 //  Copyright (c) 2014 Artisan Mobile, Inc. All rights reserved.
 //
 
