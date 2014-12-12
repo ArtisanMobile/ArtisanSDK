@@ -20,7 +20,9 @@
 #import <ArtisanSDK/UITableViewCell+ArtisanPublic.h>
 #import <ArtisanSDK/ARInCodeExperimentDetails.h>
 #import <ArtisanSDK/ARExperimentDetails.h>
-
+#import <ArtisanSDK/ArtisanEventTags.h>
+#import <ArtisanSDK/UIView+ArtisanEventTags.h>
+#import <ArtisanSDK/UIViewController+ArtisanEventTags.h>
 
 //////////////////////////////////////////////////////////////////////////////////
 //                                                                              //
