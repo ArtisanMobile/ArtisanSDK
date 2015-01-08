@@ -120,6 +120,7 @@
 
 + (void)trackEvent:(NSString *)eventName category:(NSString *)category subCategory:(NSString *)subCategory subSubCategory:(NSString *)subSubCategory;
 
-+ (void)trackWebViewElement:(NSString *)eventName parameters:(NSDictionary *)parameters;
++ (void)trackWebViewElement:(NSString *)eventName parameters:(NSDictionary *)parameters webview:(UIWebView*) webView;
+
 + (void)trackWebViewPage:(NSString *)url;
 @end
