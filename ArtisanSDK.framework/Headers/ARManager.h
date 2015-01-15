@@ -3,7 +3,7 @@
 //
 //  Copyright (c) 2014 Artisan Mobile. All rights reserved.
 //
-//  version: 2.3.11
+//  version: 2.4.0
 //
 
 #import <Foundation/Foundation.h>

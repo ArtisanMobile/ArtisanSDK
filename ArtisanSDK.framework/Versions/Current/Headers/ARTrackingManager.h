@@ -122,5 +122,6 @@
 
 + (void)trackWebViewElement:(NSString *)eventName parameters:(NSDictionary *)parameters webview:(UIWebView*) webView;
 
-+ (void)trackWebViewPage:(NSString *)url;
++ (void)trackWebViewPage:(NSString *)url webview:(UIWebView*) webView;
+
 @end
