@@ -120,6 +120,29 @@
 
 + (void)trackEvent:(NSString *)eventName category:(NSString *)category subCategory:(NSString *)subCategory subSubCategory:(NSString *)subSubCategory;
 
+
+/** Get a NSDictionary of all the ArtisanEventTags in all active view controllers
+ *
+ * This can be used in parameters a trackEvent call to attach all of the ArtisanEventTags in all active view controller.
+ * Note: ArtisanEventTags for the most recent view controller sare accessible AFTER ViewWillAppear and inside of ViewDidAppear.
+ 
+ Usage Example
+ =============
+ 
+ <code><pre>
+ [ARTrackingManager trackEvent:@"myEvent" parameters:[ARTrackingManager getArtisanEventTagsForActiveViewControllers]];
+ </pre></code>
+ 
+ <code><pre>
+ NSMutableDictionary *myParameters = [NSMutableDictionary dictionaryWithDictionary:[ARTrackingManager getArtisanEventTagsForActiveViewControllers]];
+ [myParameters setObject:@"myValue" forKey:@"myKey"];
+ [ARTrackingManager trackEvent:@"myEvent" parameters:[NSDictionary dictionaryWithDictionary:myParameters]];
+ </pre></code>
+ 
+*/
+
++ (NSDictionary *)getArtisanEventTagsForActiveViewControllers;
+
 + (void)trackWebViewElement:(NSString *)eventName parameters:(NSDictionary *)parameters webview:(UIWebView*) webView;
 
 + (void)trackWebViewPage:(NSString *)url webview:(UIWebView*) webView;
