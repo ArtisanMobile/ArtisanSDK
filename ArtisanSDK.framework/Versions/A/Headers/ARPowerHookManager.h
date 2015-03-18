@@ -29,9 +29,9 @@
 *
 * Use this method to declare the existence of a Power Hook you would like to pass in from Artisan.  This declaration should occur in the `didFinishLaunchingWithOptions:` method of your main app delegate, *before* you start Artisan using the `[ARManager startWithAppId:version:]` method.
 *
-* @param hookId The name of the configuration setting to register. Name must be unique for this app.
-* @param friendlyName The name for this hook that will be displayed in Artisan Tools.
-* @param defaultValue The default value for this hook.  This value will be used if no value is passed in from Artisan Tools for this app.
+* @param hookId The name of the configuration setting to register. Name must be unique for this app and cannot be empty.
+* @param friendlyName The name for this hook that will be displayed in Artisan Tools. This value cannot be empty.
+* @param defaultValue The default value for this hook.  This value will be used if no value is passed in from Artisan Tools for this app. This value cannot be nil.
 */
 +(void)registerHookWithId:(NSString *)hookId friendlyName:(NSString *)friendlyName defaultValue:(NSString *)defaultValue;
 
@@ -83,18 +83,18 @@
  *
  * *NOTE:* If this block is executed from an Artisan Push message or URL the thread calling the block of code is guaranteed to be the main thread. If the code inside of the block requires executing on a background thread you will need to implement this logic.
  *
- * @param blockId The name of the code to register. Name must be unique for this app.
- * @param friendlyName The name for this code block that will be displayed in Artisan Tools.
- * @param data The default data for this code block. This should be string keys and values. This data will be used if no data is passed in from Artisan Tools for this code block for this app.
- * @param block The reusable block of code that you are registering with Artisan. When you later call executeBlock you can provide extra_data and context that can be used by your block. We will merge the values from Artisan Tools with this extra data.
+ * @param blockId The name of the code to register. Name must be unique for this app and cannot be empty.
+ * @param friendlyName The name for this code block that will be displayed in Artisan Tools. This value cannot be empty.
+ * @param data The default data for this code block. This should be string keys and values. This data will be used if no data is passed in from Artisan Tools for this code block for this app. This may be an empty dictionary but it cannot be nil.
+ * @param block The reusable block of code that you are registering with Artisan. When you later call executeBlock you can provide extra_data and context that can be used by your block. We will merge the values from Artisan Tools with this extra data. A block is required, this parameter cannot be nil.
  */
 + (void)registerBlockWithId:(NSString *)blockId friendlyName:(NSString *)friendlyName data:(NSDictionary *)data andBlock:(void (^)(NSDictionary *extra_data, id context)) block;
 
 
 /**
- *  Bind a power hook to a string property on one of your UI elements
+ *  Bind a Power Hook to a string property on one of your UI elements
  *
- *  @param powerHookId the hookId of your power hook. This is the same id that you registered it with in your AppDelegate
+ *  @param powerHookId the hookId of your Power Hook. This is the same id that you registered it with in your AppDelegate
  *  @param element     The UI element that you'd like to bind a property on, for example a UIButton.
  *  @param attribute   The attribute of the given element that you'd like to bind this pwoer hook to.
  */
@@ -103,10 +103,10 @@
                                        attribute:(NSString *)attribute;
 
 /**
- *  Bind a power hook to a string property on one of your UI elements. The power hook value will be passed into the string with format as a string.
+ *  Bind a Power Hook to a string property on one of your UI elements. The Power Hook value will be passed into the string with format as a string.
  *
- *  @param powerHookId the hookId of your power hook. This is the same id that you registered it with in your AppDelegate
- *  @param stringWithFormat The string to bind to the attribute for the given element. The power hook value will be passed in as the argument to the string with format, so you should have just one token to replace.
+ *  @param powerHookId the hookId of your Power Hook. This is the same id that you registered it with in your AppDelegate
+ *  @param stringWithFormat The string to bind to the attribute for the given element. The Power Hook value will be passed in as the argument to the string with format, so you should have just one token to replace.
  *  @param element     The UI element that you'd like to bind a property on, for example a UIButton.
  *  @param attribute   The attribute of the given element that you'd like to bind this pwoer hook to.
  */
@@ -116,10 +116,10 @@
                                        attribute:(NSString *)attribute;
 
 /**
- *  Bind a power hook to a string property on one of your UI elements. The power hook value will be passed into the string with format as an int.
+ *  Bind a Power Hook to a string property on one of your UI elements. The Power Hook value will be passed into the string with format as an int.
  *
- *  @param powerHookId the hookId of your power hook. This is the same id that you registered it with in your AppDelegate. This power hook should have a value that can be cast to an int.
- *  @param stringWithFormat The string to bind to the attribute for the given element. The power hook value will be passed in as the argument to the string with format, so you should have just one token to replace.
+ *  @param powerHookId the hookId of your Power Hook. This is the same id that you registered it with in your AppDelegate. This Power Hook should have a value that can be cast to an int.
+ *  @param stringWithFormat The string to bind to the attribute for the given element. The Power Hook value will be passed in as the argument to the string with format, so you should have just one token to replace.
  *  @param element     The UI element that you'd like to bind a property on, for example a UIButton.
  *  @param attribute   The attribute of the given element that you'd like to bind this pwoer hook to.
  */
@@ -128,10 +128,10 @@
                                         UIElement:(id)element
                                         attribute:(NSString *)attribute;
 /**
- *  Bind a power hook to a string property on one of your UI elements. The power hook value will be passed into the string with format as a float.
+ *  Bind a Power Hook to a string property on one of your UI elements. The Power Hook value will be passed into the string with format as a float.
  *
- *  @param powerHookId the hookId of your power hook. This is the same id that you registered it with in your AppDelegate. This power hook should have a value that can be cast to a float.
- *  @param stringWithFormat The string to bind to the attribute for the given element. The power hook value will be passed in as the argument to the string with format, so you should have just one token to replace.
+ *  @param powerHookId the hookId of your Power Hook. This is the same id that you registered it with in your AppDelegate. This Power Hook should have a value that can be cast to a float.
+ *  @param stringWithFormat The string to bind to the attribute for the given element. The Power Hook value will be passed in as the argument to the string with format, so you should have just one token to replace.
  *  @param element     The UI element that you'd like to bind a property on, for example a UIButton.
  *  @param attribute   The attribute of the given element that you'd like to bind this pwoer hook to.
  */
@@ -171,6 +171,24 @@
  * You don't need to call startAppWithId:variantName prior to calling getSingleValuePowerHooks.
  */
 + (NSDictionary *)getAllCodeBlocksData;
+
+/**
+ * Get details for all currently running Power Hook Variable experiments.
+ *
+ * Details include the hook id for the Power Hook, experiment and variation ids and start and end date of the experiment.
+ *
+ * Returns an `NSDictionary` of experiment details for all running Power Hook variable experiments, where the keys are the `NSString` hook ids of the Power Hook variables, and the values are `ARPowerHookExperimentDetails` objects.
+ */
++ (NSDictionary *)getPowerHookVariableExperimentDetails;
+
+/**
+ * Get details for all currently running Power Hook Block experiments.
+ *
+ * Details include the Power Hook block id, experiment and variation ids and start and end date of the experiment.
+ *
+ * Returns an `NSDictionary` of experiment details for all running Power Hook block experiments, where the keys are the `NSString` blockIds of the Power Hook blocks, and the values are `ARPowerHookExperimentDetails` objects.
+ */
++ (NSDictionary *)getPowerHookBlockExperimentDetails;
 
 /** Register a block for callback when any Power Hook variables have changed.
  *

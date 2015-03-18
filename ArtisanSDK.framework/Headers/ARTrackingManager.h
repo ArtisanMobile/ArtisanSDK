@@ -5,6 +5,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 
 /**
  * Manages all in-code analytics tracking designed for use with Artisan, to allow you

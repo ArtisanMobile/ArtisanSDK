@@ -14,6 +14,7 @@
 #import <ArtisanSDK/UIViewController+ArtisanNameTag.h>
 #import <ArtisanSDK/ARPowerHookManager.h>
 #import <ArtisanSDK/ARPowerHookVariable.h>
+#import <ArtisanSDK/ARPowerHookExperimentDetails.h>
 #import <ArtisanSDK/ARPurchaseWorkflowManager.h>
 #import <ArtisanSDK/ARSocialSharingManager.h>
 #import <ArtisanSDK/ARInCodeExperimentDetails.h>

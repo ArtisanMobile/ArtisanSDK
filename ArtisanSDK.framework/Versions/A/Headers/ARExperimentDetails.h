@@ -16,16 +16,19 @@ extern NSString *const DetailDictionaryCurrentVariationNameKey;
 /**
  * An object containing useful information about an experiment
  **/
-
 @interface ARExperimentDetails : NSObject
 
 /**
  * The id of the experiment.
+ *
+ * The experiment id is a unique identifier for an Artisan experiment.
  */
 @property (nonatomic, readonly) NSString *experimentId;
 
 /**
  * The name of the experiment.
+ *
+ * The experiment name is the same that you would see in Artisan Tools.
  */
 @property (nonatomic, readonly) NSString *experimentName;
 
@@ -36,18 +39,16 @@ extern NSString *const DetailDictionaryCurrentVariationNameKey;
 
 /**
  * The current variant id for the experiment.
+ *
+ * The variant id is a unique identifier for the variation of an Artisan Experiment.
  */
 @property (nonatomic, retain) NSString *currentVariantId;
 
 /**
  * The current variant name for the experiment.
+ *
+ * The variant name is the same that you would see in Artisan Tools. Unless the names were edited in Artisan tools they are "Control", "B", "C", etc.
  */
 @property (nonatomic, retain) NSString *currentVariantName;
-
-/**
- * This is the init to build the ARExperimentDetails object.
- * You won't need to use this;
- */
-- (id)initWithDictionary:(NSDictionary *)detailsDictionary;
 
 @end
