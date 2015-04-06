@@ -55,7 +55,7 @@
 * @warning *Note:* This method is intended for local test and QA use only, and should *not* be used within production code.
 *
 * @param hookId The name of the Power Hook whose value you want to set.
-* @param value The value you want to specify for this Power Hook.  If the Power Hook has not been registered, this will be ignored.
+* @param value The value you want to specify for this Power Hook.  If the Power Hook has not been registered, this will be ignored. This value cannot be nil.
 */
 +(void)setValueForHookById:(NSString *)hookId value:(NSString *)value;
 
@@ -73,7 +73,7 @@
  *
  * @param hookId The name of the Power Hook whose ARPowerHookVariable instance you want to retrieve.
  */
-+(ARPowerHookVariable *) getPowerHookVariable:(NSString *)hookId;
++ (ARPowerHookVariable *)getPowerHookVariable:(NSString *)hookId;
 
 /**
  * Registers a Power Hook Block for use with Artisan.

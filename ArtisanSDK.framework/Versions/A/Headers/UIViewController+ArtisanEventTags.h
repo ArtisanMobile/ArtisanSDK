@@ -5,7 +5,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ArtisanEventTags.h"
 
 /**
  Category that adds the artisanEventTags property to UIViewControllers.

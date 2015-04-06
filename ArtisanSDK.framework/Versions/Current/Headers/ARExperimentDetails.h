@@ -35,20 +35,20 @@ extern NSString *const DetailDictionaryCurrentVariationNameKey;
 /**
  * The type of the experiment.
  */
-@property (nonatomic, retain) NSString *experimentType;
+@property (nonatomic, copy) NSString *experimentType;
 
 /**
  * The current variant id for the experiment.
  *
  * The variant id is a unique identifier for the variation of an Artisan Experiment.
  */
-@property (nonatomic, retain) NSString *currentVariantId;
+@property (nonatomic, copy) NSString *currentVariantId;
 
 /**
  * The current variant name for the experiment.
  *
  * The variant name is the same that you would see in Artisan Tools. Unless the names were edited in Artisan tools they are "Control", "B", "C", etc.
  */
-@property (nonatomic, retain) NSString *currentVariantName;
+@property (nonatomic, copy) NSString *currentVariantName;
 
 @end

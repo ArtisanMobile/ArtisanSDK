@@ -20,12 +20,12 @@
 /** Return the hookId for this Power Hook variable.
  *
  */
--(NSString *) hookId;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *hookId;
 
 /** Return the value for this Power Hook variable.
  *
  */
--(NSString *) value;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *value;
 
 /** Return the value for this Power Hook variable as a BOOL.
  * YES, yes, Y, y, 1, TRUE, true, T, t will return YES
@@ -33,19 +33,19 @@
  *
  * NOTE: if the conversion fail the method will return NO
  */
--(BOOL) valueAsBool;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL valueAsBool;
 
 /** Return the value for this Power Hook variable as an int.
  *
  * NOTE: if the conversion fail the method will return 0
  */
--(int) valueAsInt;
+@property (NS_NONATOMIC_IOSONLY, readonly) int valueAsInt;
 
 /** Return the value for this Power Hook variable as a float.
  *
  * NOTE: if the conversion fail the method will return 0
  */
--(int)valueAsFloat;
+@property (NS_NONATOMIC_IOSONLY, readonly) int valueAsFloat;
 
 /** Specify a block to call when the Power Hook value changes.
  *

@@ -3,7 +3,7 @@
 //
 //  Copyright (c) 2014 Artisan Mobile. All rights reserved.
 //
-//  version: 2.4.8
+//  version: 2.4.9
 //
 
 #import <Foundation/Foundation.h>
@@ -69,24 +69,6 @@ extern NSString *const ARManagerNeverEnableArtisanGesture;
  * This function assume you have ArtisanConfiguration.plist in your project with an AppID set
  */
 +(void)startWithConfigurationFile;
-
-/** Set userId for Artisan Logging.
- *
- * Use this method to setup the userId for sending a log message through the Artisan SDK.
- *
- * @param userId The string used to uniquely identify a user's device.
- *
- */
-+(void)setLogMessageUserId:(NSString *)userId;
-
-/** Log a message.
- *
- * Use this method to send a log message through the Artisan SDK.
- *
- * @param message The log message.
- *
- */
-+(void)logMessage:(NSString *)message;
 
 /** Register block for callback when the first play list is downloaded.
  *

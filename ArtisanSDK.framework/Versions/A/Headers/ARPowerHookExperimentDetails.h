@@ -41,6 +41,6 @@
 /**
  * Whether this experiment is currently running in Artisan Tools.
  */
-- (BOOL)isRunning;
+@property (NS_NONATOMIC_IOSONLY, getter=isRunning, readonly) BOOL running;
 
 @end

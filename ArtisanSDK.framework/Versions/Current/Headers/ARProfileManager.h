@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-typedef enum { ARGenderMale, ARGenderFemale, ARGenderNA } ARGender;
+typedef NS_ENUM(NSInteger, ARGender) { ARGenderMale, ARGenderFemale, ARGenderNA } ;
 
 /**
  * Manages the Artisan Profiling and Segmentation capability. This includes:

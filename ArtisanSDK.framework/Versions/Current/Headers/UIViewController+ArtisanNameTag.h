@@ -8,6 +8,6 @@
 
 @interface UIViewController (ArtisanNameTag)
 
-@property (nonatomic, retain) NSString *artisanNameTag;
+@property (nonatomic, copy) NSString *artisanNameTag;
 
 @end
