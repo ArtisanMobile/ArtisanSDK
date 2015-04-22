@@ -31,21 +31,27 @@
  * YES, yes, Y, y, 1, TRUE, true, T, t will return YES
  * any other value will return NO
  *
- * NOTE: if the conversion fail the method will return NO
+ * NOTE: if the conversion fails the method will return NO
  */
 @property (NS_NONATOMIC_IOSONLY, readonly) BOOL valueAsBool;
 
 /** Return the value for this Power Hook variable as an int.
  *
- * NOTE: if the conversion fail the method will return 0
+ * NOTE: if the conversion fails the method will return 0
  */
 @property (NS_NONATOMIC_IOSONLY, readonly) int valueAsInt;
 
 /** Return the value for this Power Hook variable as a float.
  *
- * NOTE: if the conversion fail the method will return 0
+ * NOTE: if the conversion fails the method will return 0
  */
-@property (NS_NONATOMIC_IOSONLY, readonly) int valueAsFloat;
+@property (NS_NONATOMIC_IOSONLY, readonly) float valueAsFloat;
+
+/** Return the value for this Power Hook variable as a double.
+ *
+ * NOTE: if the conversion fails the method will return 0
+ */
+@property (NS_NONATOMIC_IOSONLY, readonly) double valueAsDouble;
 
 /** Specify a block to call when the Power Hook value changes.
  *
