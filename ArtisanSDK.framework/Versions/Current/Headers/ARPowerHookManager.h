@@ -152,15 +152,19 @@
 + (void)executeBlockWithId:(NSString *)blockId data:(NSDictionary *)extra_data context:(id)context;
 
 /** Set the data for a code block manually.
- *
- * Use this method to manually apply a value to an Artisan code block.  The app will behave as if this value has been passed from Artisan Tools, and all calls to executeBlockWithName: for this blockName will execute with the given data instead of the defaults.
- *
- * This method should be called in the `didFinishLaunchingWithOptions:` method of your main app delegate, immediately after regstering the corresponding block.
- *
- * @warning *Note:* This method is intended for local test and QA use only, and should *not* be used within production code.
- *
- * @param blockId The name of the code block setting whose data you want to set.
- * @param data The data you want to specify for this code block.  If the code block has not been registered, this will be ignored.
+
+  Use this method to manually apply a value to an Artisan code block.  The app will behave as if this value has been passed from Artisan Tools, and all calls to executeBlockWithName: for this blockName will execute with the given data instead of the defaults.
+
+  This method should be called in the `didFinishLaunchingWithOptions:` method of your main app delegate, immediately after regstering the corresponding block.
+
+  NOTE: the dictionary of new data should be in a dictionary with the key @"value". For example:
+
+     [ARPowerHookManager setDataForBlock:@"mySampleBlock" data:@{@"value":@{@"myKey":@"my updated value"}}];
+
+  @warning *Note:* This method is intended for local test and QA use only, and should *not* be used within production code.
+
+  @param blockId The name of the code block setting whose data you want to set.
+  @param data The data you want to specify for this code block. If the code block has not been registered, this will be ignored.
  */
 + (void)setDataForBlock:(NSString *)blockId data:(NSDictionary *)data;
 
