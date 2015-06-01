@@ -419,6 +419,19 @@ typedef NS_ENUM(NSInteger, ARGender) { ARGenderMale, ARGenderFemale, ARGenderNA 
  */
 +(void)setUserAvatarUrl:(NSString *)userAvatar;
 
+/** Get the Artisan Id for the current user.
+ *
+ * This identifier will be unique to the device.
+ *
+ */
++(NSString*)getArtisanId;
+
+/** Get the Apple Push Notification token for the current user.
+ *
+ * If pushes are not enabled for this app, this will return an empty string.
+ *
+ */
++(NSString*)getPushToken;
 
 
 
