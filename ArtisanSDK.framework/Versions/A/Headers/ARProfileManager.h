@@ -59,6 +59,7 @@ typedef NS_ENUM(NSInteger, ARGender) { ARGenderMale, ARGenderFemale, ARGenderNA 
  */
 +(void)registerLocation:(NSString *)variableName;
 
+
 /** Register a custom profile variable for this user.
  *
  * This custom variable will be included in this user's personalization profile, and can be used for segmentation, targeting, and reporting purposes.
@@ -107,7 +108,6 @@ typedef NS_ENUM(NSInteger, ARGender) { ARGenderMale, ARGenderFemale, ARGenderNA 
  */
 +(void)registerLocation:(NSString *)variableName withValue:(CLLocationCoordinate2D)value;
 
-
 /** Set or update the value associated with a custom string profile variable.
  *
  * This new value will be used as part of this user's personalization profile, and will be used from this point forward for segmentation, targeting, and reporting purposes.
@@ -116,7 +116,6 @@ typedef NS_ENUM(NSInteger, ARGender) { ARGenderMale, ARGenderFemale, ARGenderNA 
  *
  * @param variableName Variable to which this value should be assigned.
  */
-
 +(void)setStringValue:(NSString *)value forVariable:(NSString *)variableName;
 
 /** Set or update the value associated with a custom number profile variable.
@@ -127,7 +126,6 @@ typedef NS_ENUM(NSInteger, ARGender) { ARGenderMale, ARGenderFemale, ARGenderNA 
  *
  * @param variableName Variable to which this value should be assigned.
  */
-
 +(void)setNumberValue:(NSNumber *)value forVariable:(NSString *)variableName;
 
 /** Set or update the value associated with a custom date profile variable.
@@ -138,7 +136,6 @@ typedef NS_ENUM(NSInteger, ARGender) { ARGenderMale, ARGenderFemale, ARGenderNA 
  *
  * @param variableName Variable to which this value should be assigned.
  */
-
 +(void)setDateTimeValue:(NSDate *)value forVariable:(NSString *)variableName;
 
 /** Set or update the value associated with a custom location profile variable.
@@ -149,7 +146,6 @@ typedef NS_ENUM(NSInteger, ARGender) { ARGenderMale, ARGenderFemale, ARGenderNA 
  *
  * @param variableName Variable to which this value should be assigned.
  */
-
 +(void)setLocationValue:(CLLocationCoordinate2D)value forVariable:(NSString *)variableName;
 
 /** Specify an external User ID for the current user.
@@ -200,7 +196,6 @@ typedef NS_ENUM(NSInteger, ARGender) { ARGenderMale, ARGenderFemale, ARGenderNA 
  *
  * @param enabled Whether to enable collection of user profile data by Artisan Analytics.
  */
-
 +(void)enableProfileAnalytics:(BOOL)enabled;
 
 /** Specify the prefix for the current user.
@@ -432,7 +427,5 @@ typedef NS_ENUM(NSInteger, ARGender) { ARGenderMale, ARGenderFemale, ARGenderNA 
  *
  */
 +(NSString*)getPushToken;
-
-
 
 @end
