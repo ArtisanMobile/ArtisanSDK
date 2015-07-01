@@ -22,6 +22,7 @@
 #import <ArtisanSDK/ArtisanEventTags.h>
 #import <ArtisanSDK/UIView+ArtisanEventTags.h>
 #import <ArtisanSDK/UIViewController+ArtisanEventTags.h>
+#import <ArtisanSDK/UIApplication+ArtisanDelegate.h>
 
 //////////////////////////////////////////////////////////////////////////////////
 //                                                                              //
