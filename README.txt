@@ -58,7 +58,7 @@ You should now be able to build your app and successfully connect it to Artisan.
 
 =====CONNECTING YOUR APP=====
 
-Once the SDK is installed, we need to connect your app to Artisan. Connecting your app verifies that the SDK has been installed correctly and that your app can communicate with the Artisan platform.  Follow the instructions on-screen, and you will be able to get your app connected, which will allow you to get started managing your mobile experience with Artisan.
+Once the SDK is installed, we need to connect your app to Artisan. Connecting your app verifies that the SDK has been installed correctly and that your app can communicate with the Artisan platform. Follow the instructions on-screen, and you will be able to get your app connected, which will allow you to get started managing your mobile experience with Artisan.
 
 Thanks!
 
