@@ -41,6 +41,8 @@
 *
 * Use this method to get the value of a Power Hook from Artisan.  This will return the value specified in Artisan Tools, or the default value if none has been specified.
 *
+* *NOTE*: When called in the context of an experiment this method triggers the view for the Power Hook variation value that is returned.
+*
 * @param hookId The name of the Power Hook you wish to retrieve. Will return nil if the setting has not been registered.
 */
 +(NSString *)getValueForHookById:(NSString *)hookId;
@@ -70,6 +72,8 @@
 /** Retrieve an ARPowerHookVariable instance for the passed in hookId.
  *
  * Returns an ARPowerHookVariable instance.  The ARPowerHookVariable instance is immutable and will contain the current value.
+ *
+ * *NOTE*: Retrieving the ARPowerHookVariable object and grabbing it's corresponding value will not trigger a view when in the context of an Experiment. Please use `[ARPowerHookManager getValueForHookById:@"hookId"]` when using Power Hook values for Experiments.
  *
  * @param hookId The name of the Power Hook whose ARPowerHookVariable instance you want to retrieve.
  */
